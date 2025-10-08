@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+ </head>
+ <body>
+  <div id="menu">
+   <section id="menuitems">
+    <div class="menubutton">
+     <h1 onclick="menuToggle('hide')" class="menubutton">☰</h1>
+    </div>
+    <p><!-- space above first menu item --></p>
+    <a href="javascript:void(0);"><h3 class="menusec">Tips for living well</h3></a>
+    <a href="recipe.html"><h3>Recipes</h3></a>
+
+    
+    <a href="javascript:void(0);"><h3>Homesteading advice</h3></a>
+    <a href="javascript:void(0);"><h3 class="menusec">About Us</h3></a>
+    <a href="javascript:void(0);"><h3 class="menusec">Contact Us</h3></a>
+   </section>
+  </div>
+  <div id="container">
+   <div id="header">
+    <a href="javascript:void(0);"><h1 class="logo">Our Farm Stand</h1></a>
+    <div class="headspace"></div>
+    <h1 onclick="menuToggle('show')" class="menubutton">☰</h1>
+    <h1 class="placeholder">☰</h1>
+    <h2 class="navitem">
+     <a href="javascript:void(0);">
+      <div class="clickable-area">About Us</div>
+     </a>
+    </h2>
+    <h2 class="navitem">
+     <a href="javascript:void(0);">
+      <div class="clickable-area">Contact Us</div>
+     </a>
+    </h2>
+   </div>
+   <div id="panel" class="left">
+    <section id="sections">
+     <div class="sectionlink">
+      <a href="javascript:void(0);">
+       <div class="clickable-area">Tips for living well</div>
+      </a>
+     </div>
+     <div class="sectionlink">
+      <a href="recipe.html">
+       <div class="clickable-area">Recipes</div>
+      </a>
+     </div>
+     <div class="sectionlink">
+      <a href="javascript:void(0);">
+      <div class="clickable-area">Homesteading advice</div>
+      </a>
+     </div>
+    </section>
+   </div>
+   <div id="mainbody">
+    <section class="mainbodyitems">
+     <h3>Announcements</h3>
+     <section class="announcements">
+      <div class="announceitem">
+       <h4 class="title">Open for business</h4>
+       <p class="date">Jan. 15</p>
+       <p>Renovations of our new storefront are complete, and we're open for business.</p>
+      </div>
+     </section>
+     <h3>Items for sale</h3>
+     <section class="forsaleitems">
+     <table>
+      <tr>
+       <th>Item</th>
+       <th>Description</th>
+       <th>Price</th>
+       <th class="qty">Qty</th>
+      </tr>
+      <tr>
+       <td>Milk</td>
+       <td>Good source of calcium.</td>
+       <td class="price">$2 <span class="perunit">/ half gal.</span></td>
+       <td class="qty">3</td>
+      </tr>
+      <tr>
+       <td>Eggs</td>
+       <td>Great for breakfast and baking.</td>
+       <td class="price">$4 <span class="perunit">/ doz.</span></td>
+       <td class="qty">6</td>
+      </tr>
+      <tr>
+       <td>Whole chicken</td>
+       <td>Perfect for roasting.</td>
+       <td class="price">$5 <span class="perunit">/ lb.</span></td>
+       <td class="qty">4</td>
+      </tr>
+     </table>
+    </section>
+    <h3>Upcoming events</h3>
+    <section>
+     <div class="eventitem">
+     <h4 class="title">Cider Fest</h4>
+     <p class="date">October 20, 2pm–6pm</p>
+     <p>Celebrate the season with fresh-pressed cider from our orchards.</p>
+    </div>
+    <div class="eventitem">
+     <h4 class="title">Bread baking workshop</h4>
+     <p class="date">December 13, 9am–noon</p>
+     <p>Learn how to create and cultivate a sourdough starter.</p>
+     </div>
+    </section>
+    <h3>Message of the day</h3>
+    <section>
+     <div class="motditem">
+      <p>Eat better food. Support your local farm stand.</p>
+     </div>
+    </section>
+    <h3 id="partners" class="wide">Our friends</h3>
+    <section id="partners" class="wide">
+     <div class="partnerlink wide">
+      <a href="javascript:void(0);">
+       <div class="clickable-area">Green Valley Greens</div>
+      </a>
+     </div>
+     <div class="partnerlink wide">
+      <a href="javascript:void(0);">
+       <div class="clickable-area">Turkey Hill Farm</div>
+      </a>
+     </div>
+     <div class="partnerlink wide">
+      <a href="javascript:void(0);">
+       <div class="clickable-area">Burt's Maple Syrup</div>
+      </a>
+     </div>
+     <div class="partnerlink wide">
+      <a href="javascript:void(0);">
+       <div class="clickable-area">Only Organic Seeds</div>
+      </a>
+     </div>
+    </section>
+    <div class="bodyspace"></div>
+   </section>
+  </div>
+  <div id="panel" class="right">
+   <h3>Our friends</h3>
+   <section id="partners" class="tall">
+    <div class="partnerlink">
+     <a href="javascript:void(0);">
+      <div class="clickable-area">Green Valley Greens</div>
+     </a>
+    </div>
+    <div class="partnerlink">
+     <a href="javascript:void(0);">
+      <div class="clickable-area">Turkey Hill Farm</div>
+     </a>
+    </div>
+    <div class="partnerlink">
+     <a href="javascript:void(0);">
+      <div class="clickable-area">Burt's Maple Syrup</div>
+     </a>
+    </div>
+    <div class="partnerlink">
+     <a href="javascript:void(0);">
+      <div class="clickable-area">Only Organic Seeds</div>
+     </a>
+    </div>
+   </section>
+   </div>
+   <div id="footer">
+    <p>Copyright © 2025 Alice &amp; Bob's Farm Stand</p>
+   </div>
+  </div>
+  <script>
+async function sendGA4Event(eventName, params = {}) {
+  const clientId = localStorage.getItem('client_id') || (Math.random().toString(36).substring(2) + Date.now());
+  localStorage.setItem('client_id', clientId);
+
+  const payload = {
+    client_id: clientId,
+    events: [
+      {
+        name: eventName,
+        params: params
+      }
+    ]
+  };
+
+  try {
+    await fetch('/track-event', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    console.log('GA4MP event sent:', eventName, params);
+  } catch (err) {
+    console.error('Failed to send GA4MP event:', err);
+  }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  sendGA4Event('page_view', { page_location: window.location.pathname });
+
+  document.querySelectorAll('.clickable-area').forEach(el => {
+    el.addEventListener('click', () => {
+      sendGA4Event('click', { element_text: el.textContent.trim(), page_location: window.location.pathname });
+    });
+  });
+});
+</script>
+ </body>
+</html>

@@ -1,0 +1,136 @@
+<!-- public/recipe.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Farm Stand Recipes</title>
+<link rel="stylesheet" href="style1.css" />
+</head>
+<body>
+<div id="container">
+<div id="header">
+<a href="index.html"><h1 class="logo">Our Farm Stand</h1></a>
+<div class="headspace"></div>
+<h1 class="placeholder">☰</h1>
+<h2 class="navitem">
+<a href="index.html">
+<div class="clickable-area">Home</div>
+</a>
+</h2>
+<h2 class="navitem">
+<a href="index.html#partners">
+<div class="clickable-area">Our Friends</div>
+</a>
+</h2>
+</div>
+ 
+    <div id="panel" class="left">
+<section id="sections">
+<div class="sectionlink">
+<a href="index.html">
+<div class="clickable-area">Tips for living well</div>
+</a>
+</div>
+<div class="sectionlink">
+<a href="recipe.html">
+<div class="clickable-area">Recipes</div>
+</a>
+</div>
+<div class="sectionlink">
+<a href="index.html">
+<div class="clickable-area">Homesteading advice</div>
+</a>
+</div>
+</section>
+</div>
+ 
+    <div id="mainbody">
+<section class="mainbodyitems">
+<h3>Farm Stand Recipes</h3>
+<section>
+<div class="eventitem">
+<h4 class="title">Fresh Tomato Salsa</h4>
+<p>Chop tomatoes, onions, cilantro, and jalapeños. Mix with lime juice and salt. Serve fresh!</p>
+</div>
+<div class="eventitem">
+<h4 class="title">Rustic Sourdough Bread</h4>
+<p>Use your sourdough starter, flour, and water. Let rise overnight, bake in a Dutch oven.</p>
+</div>
+<div class="eventitem">
+<h4 class="title">Farmhouse Omelette</h4>
+<p>Whisk eggs with milk, add chopped veggies and cheese. Cook until golden and fluffy.</p>
+</div>
+</section>
+</section>
+</div>
+ 
+    <div id="panel" class="right">
+<h3>Our friends</h3>
+<section id="partners" class="tall">
+<div class="partnerlink">
+<a href="javascript:void(0);">
+<div class="clickable-area">Green Valley Greens</div>
+</a>
+</div>
+<div class="partnerlink">
+<a href="javascript:void(0);">
+<div class="clickable-area">Turkey Hill Farm</div>
+</a>
+</div>
+<div class="partnerlink">
+<a href="javascript:void(0);">
+<div class="clickable-area">Burt's Maple Syrup</div>
+</a>
+</div>
+<div class="partnerlink">
+<a href="javascript:void(0);">
+<div class="clickable-area">Only Organic Seeds</div>
+</a>
+</div>
+</section>
+</div>
+ 
+    <div id="footer">
+<p>Copyright © 2025 Alice &amp; Bob's Farm Stand</p>
+</div>
+</div>
+<script>
+async function sendGA4Event(eventName, params = {}) {
+  const clientId = localStorage.getItem('client_id') || (Math.random().toString(36).substring(2) + Date.now());
+  localStorage.setItem('client_id', clientId);
+
+  const payload = {
+    client_id: clientId,
+    events: [
+      {
+        name: eventName,
+        params: params
+      }
+    ]
+  };
+
+  try {
+    await fetch('/track-event', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    console.log('GA4MP event sent:', eventName, params);
+  } catch (err) {
+    console.error('Failed to send GA4MP event:', err);
+  }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  sendGA4Event('page_view', { page_location: window.location.pathname });
+
+  document.querySelectorAll('.clickable-area').forEach(el => {
+    el.addEventListener('click', () => {
+      sendGA4Event('click', { element_text: el.textContent.trim(), page_location: window.location.pathname });
+    });
+  });
+});
+</script>
+</body>
+</html>

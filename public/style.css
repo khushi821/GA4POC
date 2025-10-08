@@ -1,0 +1,243 @@
+/* element styles */
+* {
+  margin: 0;
+}
+html {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 1.0em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  min-height: 100%;
+}
+section {
+  padding: 0.5rem;
+  flex-grow: 1;
+}
+h1 {
+  font-size: 2.0rem;
+  font-weight: normal;
+}
+h2 {
+  font-size: 1.25rem;
+}
+h3 {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+h4 {
+  font-weight: normal;
+  padding: 0.5rem;
+}
+p {
+  padding: 0.5rem;
+}
+a:link, a:visited {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  color: rgb(25, 25, 25);
+}
+a:active {
+  color: rgb(96, 96, 96);
+}
+
+/* component styles */
+#container {
+  display: grid;
+  height: 100%;
+  grid-template-columns: [left] 10rem auto 10rem [right];
+  grid-template-rows: [top] 5rem auto 5rem [bottom];
+  grid-template-areas:
+    "head head head"
+    "panleft mainbody panright"
+    "foot foot foot";
+}
+#header {
+  grid-area: head;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1.0rem;
+}
+#panel {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.1);
+}
+#panel.left {
+  grid-area: panleft;
+}
+#panel.right {
+  grid-area: panright;
+}
+#footer {
+  grid-area: foot;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.2);
+}
+#mainbody {
+  display: flex;
+  flex-direction: column;
+  grid-area: mainbody;
+  justify-self: center;
+  width: 100%;
+  min-width: 22.5rem;
+}
+div#panel,
+div#mainbody {
+  padding-top: 0.5rem;
+}
+#partners, #sections {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+#partners.wide {
+  display: none;
+}
+#menu {
+  position: absolute;
+  right: 0;
+  background: rgb(239, 239, 239);
+  border: 0.15rem solid rgba(0, 0, 0, 0.4);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+}
+#menuitems {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+#menuitems h3 {
+  border-top: 0.15rem solid rgba(0, 0, 0, 0.1);
+}
+#menuitems .menusec {
+  border-color: rgba(0, 0, 0, 0.25);
+}
+#menuitems h3:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.menubutton {
+  text-align: right;
+  cursor: pointer;
+}
+#menuitems .alignright {
+  text-align: right;
+}
+#header h1.menubutton {
+  display: none;
+  border: 0.15rem solid rgba(0, 0, 0, 0);
+}
+#header .placeholder {
+  color: rgba(0, 0, 0, 0);
+}
+.sectionlink, .partnerlink {
+  border-radius: 0.25rem;
+  font-weight: normal;
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  width: 7rem;
+  margin-bottom: 1rem;
+  background: rgba(0, 0, 0, 0.1);
+}
+.sectionlink:hover, .partnerlink:hover {
+  background-color: rgba(0, 0, 0, 0.065);
+}
+.partnerlink {
+  height: 7rem;
+}
+.partnerlink.wide {
+  margin: 0.5rem 1rem 0.5rem 0;
+}
+.clickable-area {
+  height: 100%;
+}
+.eventitem, .announceitem, .motditem {
+  margin-bottom: 0.5rem;
+}
+.title {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 1.1rem;
+}
+.date {
+  font-style: italic;
+  font-size: 0.9rem;
+  padding: 0 0 0 0.5rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+.navitem {
+  font-weight: normal;
+  padding: 0 0.5rem 0 1rem;
+}
+.headspace, .panspace, .footspace, .bodyspace {
+  flex-grow: 1;
+}
+
+/* table styles ("items for sale") */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+th {
+  text-align: left;
+}
+tr {
+  margin: 4rem 0 0 0;
+  border-bottom: 0.15rem solid rgba(0, 0, 0, 0.2);
+}
+td, th {
+  padding: 0.5rem;
+  vertical-align: top;
+}
+td.price {
+  white-space: nowrap;
+}
+td.qty, th.qty {
+  text-align: center;
+}
+span.perunit {
+  opacity: 0.5;
+}
+
+/* responsive styles applied in portrait mode */
+@media screen and (max-width: 45rem) {
+  #panel.left {
+    grid-column-end: left;
+  }
+  #panel.right {
+    grid-column-start: right;
+  }
+  #partners.tall {
+    display: none;
+  }
+  #partners.wide {
+    display: flex;
+  }
+  #panel,
+  #header .placeholder,
+  .navitem {
+    display: none;
+  }
+  #mainbody {
+    grid-column-start: left;
+    grid-column-end: right;
+  }
+  #header h1.menubutton {
+    display: inline;
+  }
+}
